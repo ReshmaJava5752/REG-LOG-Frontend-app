@@ -88,3 +88,40 @@ the five rules while the user types.
 
 `vite.config.js` proxies `/api` to `http://localhost:8080` during development, so the React app
 can use relative URLs and avoid cross-origin requests in the browser.
+
+---
+
+## Backend repository
+
+This repository contains the **frontend only**. The Spring Boot API lives in the companion
+repository **[REG-LOG-Backend-app](https://github.com/ReshmaJava5752/REG-LOG-Backend-app)**.
+
+| | |
+| :--- | :--- |
+| API base URL | `http://localhost:8080/api/auth` (`src/services/api.js`) |
+| Dev server | `http://localhost:5173` |
+| Dev proxy | `/api` → `http://localhost:8080` (`vite.config.js`) |
+
+Start the backend first, then run `npm run dev` in this repository. The backend repository
+contains the database schema scripts, the Postman collection and the full setup instructions.
+
+---
+
+## Configuration and secrets
+
+The client holds **no credentials**. There is no API key, no token and no service credential in
+the browser code, and no environment variable has to be set to build or run the app.
+
+If you later add a build-time setting, put it in a `.env` file — but be aware that **every
+`VITE_*` variable is embedded in the shipped JavaScript bundle and is therefore public**. Never
+put a secret in one. `.env` files are git-ignored; only `.env.example` is tracked.
+
+See [`SECURITY.md`](SECURITY.md) for the full security policy, including the trade-off of
+keeping the JWT in `localStorage`.
+
+---
+
+## Related repository
+
+* **Backend** — [REG-LOG-Backend-app](https://github.com/ReshmaJava5752/REG-LOG-Backend-app)
+  (Spring Boot 3.4, JWT authentication, e-mail OTP recovery, MySQL).
