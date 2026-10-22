@@ -98,7 +98,7 @@ repository **[REG-LOG-Backend-app](https://github.com/ReshmaJava5752/REG-LOG-Bac
 
 | | |
 | :--- | :--- |
-| API base URL | `http://localhost:8080/api/auth` (`src/services/api.js`) |
+| API base URL | `http://localhost:8080/api/auth` (configurable via `VITE_API_BASE_URL` in `.env.local`, see `.env.example`) |
 | Dev server | `http://localhost:5173` |
 | Dev proxy | `/api` → `http://localhost:8080` (`vite.config.js`) |
 

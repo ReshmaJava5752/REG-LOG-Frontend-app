@@ -1,5 +1,5 @@
 // Centralized API service for communicating with the Spring Boot backend
-const API_BASE_URL = 'http://localhost:8080/api/auth';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api/auth';
 
 const TOKEN_KEY = 'auth_token';
 const USER_KEY = 'auth_user';
